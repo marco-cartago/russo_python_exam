@@ -75,7 +75,7 @@ def compute_daily_max_difference(time_series):
     if not isinstance(time_series, list):
         raise ExamException("Errore! L'input deve essere una lista")
     
-    # Non ci sono dati su cui calcolare l'escursionee
+    # Non ci sono dati su cui calcolare l'escursione termica
     if len(time_series) == 0:
         return []
     
@@ -114,5 +114,3 @@ def compute_daily_max_difference(time_series):
             processed_data.append(max(current_day_temperatures) - min(current_day_temperatures))
 
     return processed_data
-
-print(compute_daily_max_difference(CSVTimeSeriesFile(name="data.csv").get_data()))
